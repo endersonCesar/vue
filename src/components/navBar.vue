@@ -1,27 +1,26 @@
 <template>
-  
-     <b-navbar toggleable="lg" type="dark" variant="dark">
-    <b-navbar-brand href="#">Home</b-navbar-brand>
-
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-    <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav>
-        <b-nav-item href="#">Link</b-nav-item>
-        <b-nav-item href="#" disabled>Disabled</b-nav-item>
-      </b-navbar-nav>
-
-      <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
-        <b-nav-form>
-          <b-form-input size="sm" class="mr-sm-2" placeholder="Search"></b-form-input>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
-        </b-nav-form>
-
-       
-      </b-navbar-nav>
-    </b-collapse>
-  </b-navbar>
+   <div>
+    <b-button v-b-toggle.sidebar-no-header>Menu </b-button>
+    <b-sidebar id="sidebar-no-header" aria-labelledby="sidebar-no-header-title" no-header shadow>
+      <template #default="{ hide }">
+        <div class="p-3">
+          <h4 id="sidebar-no-header-title">Custom header sidebar</h4>
+          <p>
+            Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis
+            in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+          </p>
+          <nav class="mb-3">
+            <b-nav vertical>
+              <b-nav-item active @click="hide">Active</b-nav-item>
+              <b-nav-item href="#link-1" @click="hide">Link</b-nav-item>
+              <b-nav-item href="#link-2" @click="hide">Another Link</b-nav-item>
+            </b-nav>
+          </nav>
+          <b-button variant="primary" block @click="hide">Close Sidebar</b-button>
+        </div>
+      </template>
+    </b-sidebar>
+  </div>
 
 </template>
 
