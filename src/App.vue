@@ -1,28 +1,27 @@
 <template>
   <div id="app">
-   <!-- <navBar />-->
+    <menus />
+
     <b-container class="bv-example-row">
       <b-row>
-
-        
-        <b-col >
-          <card/> 
-        </b-col>
+        <b-col> </b-col>
       </b-row>
     </b-container>
+  <FooterPage />
   </div>
 </template>
 
 <script>
-//import navBar from "./components/navBar.vue";
-import card from "./components/card.vue";
+import menus from "./components/menus.vue";
+import FooterPage from "./components/footer.vue";
 //import formulario from "./components/formulario.vue";
 export default {
   name: "App",
   components: {
-   // navBar,
-    card,
-   // formulario,
+    menus,
+    FooterPage,
+    // menus,
+    // formulario,
   },
 };
 </script>
